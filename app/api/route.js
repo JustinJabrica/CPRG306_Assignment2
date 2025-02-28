@@ -59,6 +59,14 @@ export async function POST(req){
         if (!fn || !ln || !dob || !grd){
             res = {message: 'Error!'}
             console.log('===> Err: ', fn, ln, dob, grd);
+        }else if(!isVldStr(fn)) {
+            res = {message: 'Sever side check First Name format: Failed!'}
+        }else if(!isVldStr(ln)) {
+            res = {message: 'Sever side check Last Name format: Failed!'}
+        }else if(!isVldGrd(grd)) {
+            res = {message: 'Sever side check Grade format: Failed!'}
+        }else if(!isVldDob(dob)) {
+            res = {message: 'Sever side check Date of Birth format: Failed!'}
         }else{
             console.log('===> OK: ', fn, ln, dob, grd);
         
@@ -91,4 +99,30 @@ export async function POST(req){
         }
         return Response.json(res)
     }
+}
+
+
+const isVldStr = (_str) => {
+    if (_str){
+        if (_str.length >= 3 && _str.length <= 10){
+            return true
+        }
+    }
+    return false
+}
+
+const isVldGrd = (_grd) => {
+    if (_grd){
+        if (_grd => 0 && _grd <= 100){
+            return true
+        }
+    }
+    return false
+}
+
+const isVldDob = (_dob) => {
+    if (_dob){
+        return !isNaN(Date.parse(_dob));
+    }
+    return false
 }

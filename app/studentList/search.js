@@ -4,7 +4,7 @@
 export default async function Search(){
     
     const getProducts = async () => {
-        const res = await fetch("http://localhost:3000/api?a=list&q=students",{next: {revalidate: 10}}) // "https://dummyjson.com/products"  https://dummyjson.com/users
+        const res = await fetch("http://localhost:3000/api?a=list&q=students") // "https://dummyjson.com/products"  https://dummyjson.com/users
         return res.json()
     }
 

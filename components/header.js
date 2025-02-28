@@ -18,7 +18,7 @@ export default function Header(){
     }
 
     return (
-        <nav className="bg-blue-900 w-full"> 
+        <nav className="bg-rose-900 w-full">
             <div className="mx-full max-w-8xl px-2 sm:px-6 lg:px-8"> 
                 <div className="relative flex h-16 items-center "> 
                     <div className="absolute inset-y-0 left-0 flex items-center sm:hidden justify-between"> 
@@ -41,22 +41,22 @@ export default function Header(){
                     <div className="flex flex-1 items-center justify-normal sm:items-stretch">
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
-                                <Link href="/" className="text-blue-100 rounded-md font-bold">Home</Link>
+                                <Link href="/" className="text-rose-100 rounded-md font-bold">Home</Link>
                             </div>
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
-                                <Link href="/studentList" className="text-blue-100 rounded-md font-bold">List Students</Link>
+                                <Link href="/studentList" className="text-rose-100 rounded-md font-bold">List Students</Link>
                             </div>
                         </div>
                         <div className="hidden sm:ml-6 sm:block">
                             <div className="flex space-x-4">
-                                <Link href="/studentAdd" className="text-blue-100 rounded-md font-bold">Add Students</Link>
+                                <Link href="/studentAdd" className="text-rose-100 rounded-md font-bold">Add Students</Link>
                             </div>
                         </div>
                     </div>
                     <div className="absolute inset-y-0 right-0 flex items-center pr-2">
-                        <button type="button" className="relative rounded-full bg-blue-700" onClick={handleAboutClick}>
+                        <button type="button" className="relative rounded-full bg-rose-800" onClick={handleAboutClick}>
                             <span className="absolute -inset-1.5"></span>
                             <span className="sr-only">View Notifactions</span>
                             <svg
@@ -83,15 +83,15 @@ export default function Header(){
                     </div>
                 </div>
             </div>
-            <div className={`absolute w-full bg-blue-900 sm:hidden ${mobileMenu}`}>
+            <div className={`absolute w-full bg-rose-800 sm:hidden ${mobileMenu}`}>
                 <div className="space-y-1 px-2 pb-3 pt-2">
-                    <Link onClick={() => {handelMobileMenu()}} href="/" className="text-blue-100 hover:bg-blue-700 hover:text-white font-bold">Home</Link>
+                    <Link onClick={() => {handelMobileMenu()}} href="/" className="text-rose-100 hover:bg-rose-700 hover:text-white font-bold">Home</Link>
                 </div>
                 <div className="space-y-1 px-2 pb-3 pt-2">
-                    <Link onClick={() => {handelMobileMenu()}} href="/studentList" className="text-blue-100 hover:bg-blue-700 hover:text-white font-bold">List Students</Link>
+                    <Link onClick={() => {handelMobileMenu()}} href="/studentList" className="text-rose-100 hover:bg-rose-700 hover:text-white font-bold">List Students</Link>
                 </div>
                 <div className="space-y-1 px-2 pb-3 pt-2">
-                    <Link onClick={() => {handelMobileMenu()}} href="/studentAdd" className="text-blue-100 hover:bg-blue-700 hover:text-white font-bold">Add Students</Link>
+                    <Link onClick={() => {handelMobileMenu()}} href="/studentAdd" className="text-rose-100 hover:bg-rose-700 hover:text-white font-bold">Add Students</Link>
                 </div>
             </div>
         </nav>
