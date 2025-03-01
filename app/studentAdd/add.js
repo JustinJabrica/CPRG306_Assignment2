@@ -1,5 +1,7 @@
 'use client'
 
+// 'use client' directive ensures this component runs on the client side
+
 import { useState } from "react"
 
 // export const revalidate = 10
@@ -9,14 +11,16 @@ const clearReqMsgAndInputs = () => {
 }
 
 export default function Add(){
+    //state to store response messages and form validation feedback
     const [state, setState] = useState('')
 
+    //clears the request message if it's not empty
     const clearReqMsg = () => {
         if (state.message != ''){
             setState({message: ''})
         }
     }
-
+     //handles form submission and sends data to the API
     const FormAction = async(formData) => {
         const res = await fetch('http://localhost:3000/api?a=add&q=students', {
             method: 'POST',
@@ -24,15 +28,16 @@ export default function Add(){
         })
 
         const data = await res.json()
-        setState(data)
-        
+        setState(data)//updates state with API response
+
+        //sets message color based on API response
         if(data.message === 'Saved!'){
             data['msg_color'] = ' text-green-600'
         } else {
             data['msg_color'] = ' text-red-600'
         }
     }
-
+     //styling for input fields and button
     let inputStyle = "bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
     let buttonStyle = "text-white bg-rose-800 hover:bg-rose-700 focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800"
     return(
