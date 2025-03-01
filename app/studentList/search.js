@@ -11,10 +11,12 @@ export default async function Search(){
     const dat = await getProducts() //fetch student data
 
     return (
-        <>
+        <> 
+        // Title for the student list //
             <div><h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-700 md:text-3xl lg:text-3xl dark:text-white">All Students</h1></div>
-            
+             // Display any message from the API response //
             <div>{dat?.message}</div>
+              // Table to display student data //
             <div className="relative overflow-x-auto">
                 <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
                     <thead className="text-xs text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400"><tr>
@@ -26,6 +28,7 @@ export default async function Search(){
                     </tr></thead>
                     <tbody>
                         {
+                            // Loop through the student data and render each student as a table row //
                             dat?.student.map(
                                 (item, index) => (
                                     <tr key={index} className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 border-gray-200">
