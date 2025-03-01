@@ -113,7 +113,7 @@ const isVldStr = (_str) => {
 
 const isVldGrd = (_grd) => {
     if (_grd){
-        if (_grd => 0 && _grd <= 100){
+        if (_grd >= 0 && _grd <= 100){
             return true
         }
     }
