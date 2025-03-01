@@ -42,12 +42,12 @@ export default function Add(){
     let buttonStyle = "text-white bg-rose-800 hover:bg-rose-700 focus:ring-4 focus:outline-none focus:ring-rose-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-rose-600 dark:hover:bg-rose-700 dark:focus:ring-rose-800"
     return(
         <>
-            // Title for adding a student 
+            //Title for adding a student 
             <div><h1 className="mb-4 text-2xl font-extrabold leading-none tracking-tight text-gray-700 md:text-3xl lg:text-3xl dark:text-white">Add Student</h1></div>
-             // Form for adding student details 
+             //Form for adding student details 
             <form action={FormAction}>
                 <div id="reqMsg" className={`font-medium ${state.msg_color}`}>{state.message} ‎ </div>
-                 // Grid layout for input fields 
+                 //Grid layout for input fields 
                 <div className="grid gap-6 mb-6 md:grid-cols-2">
                     <div>
                         <label className="block mb-2 text-sm font-medium text-gray-900 dark:text-white">First name</label>
