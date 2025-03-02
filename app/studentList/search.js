@@ -1,7 +1,9 @@
 export default async function Search() {
   //function to fetch student data from the API
   const getProducts = async () => {
-    const res = await fetch("/?a=list&q=students"); // "https://dummyjson.com/products"  https://dummyjson.com/users
+    const res = await fetch(
+      "cprg-306-assignment2-git-main-justinjabricas-projects.vercel.app/?a=list&q=students"
+    ); // "https://dummyjson.com/products"  https://dummyjson.com/users
     return res.json(); //convert response to JSON
   };
 
